@@ -179,7 +179,7 @@ namespace RestApiExample.Controllers
             }
         }
 
-        private async Task DownloadFile(string url, string destinationPath)
+        private async Task DownloadFile(string url, string destinationPath) //function to download file from URL 
         {
             using (var response = await _httpClient.GetAsync(url))
             using (var stream = await response.Content.ReadAsStreamAsync())
