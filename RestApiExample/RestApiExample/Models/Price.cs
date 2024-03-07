@@ -12,16 +12,16 @@ namespace RestApiExample.Models
         public string SKU { get; set; }
 
         [Column("nett_price")]
-        public int Nett_Price { get; set; }
+        public string Nett_Price { get; set; }
 
         [Column("discount_nett_price")]
-        public int Discount_Nett_Price { get; set; }
+        public string Discount_Nett_Price { get; set; }
 
         [Column("vat_rate")]
-        public int Vat_Rate { get; set;}
+        public string Vat_Rate { get; set;}
 
         [Column("logistic_unit_nett_price")]
-        public int Logistic_Unit_Nett_Price { get; set; }
+        public string Logistic_Unit_Nett_Price { get; set; }
 
     }
 }

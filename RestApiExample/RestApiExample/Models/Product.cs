@@ -1,41 +1,53 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using CsvHelper.Configuration.Attributes;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace RestApiExample.Models
 {
     [Table("products")]
     public class Product
     {
-        [Column("id")]
-        public int Id { get; set; }
+        [Column("ID")]
+        [Name("ID")]
+        public string ID { get; set; }
         
         [Column("sku")]
+        [Name("SKU")]
         public string SKU { get; set; }
         
         [Column("name")]
+        [Name("name")]
         public string Name { get; set; }
         
         [Column("ean")]
+        [Name("EAN")]
         public string EAN { get; set; }
 
         [Column("producer_name")]
+        [Name("producer_name")]
         public string Producer_Name { get; set;}
 
         [Column("category")]
+        [Name("category")]
         public string Category { get; set; }
 
         [Column("is_wire")]
-        public bool Is_Wire { get; set; }
+        [Name("is_wire")]
+        public bool Is_Wire { get; set; } = false;
 
         [Column("shipping")]
-        public DateTime Shipping { get; set; }
+        [Name("shipping")]
+        public string Shipping { get; set; }
 
         [Column("available")]
-        public bool Available { get; set; }
+        [Name("available")]
+        public bool Available { get; set; } = false;
 
         [Column("is_vendor")]
-        public bool Is_Vendor { get; set; }
+        [Name("is_vendor")]
+        public bool Is_Vendor { get; set; } = false;
 
         [Column("default_image")]
+        [Name("default_image")]
         public string Default_Image { get; set; }
     }
 }

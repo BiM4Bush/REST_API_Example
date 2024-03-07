@@ -71,11 +71,29 @@ namespace RestApiExample.Controllers
                 var productsFileUrl = "https://rekturacjazadanie.blob.core.windows.net/zadanie/Products.csv";
                 var productFilePath = Path.Combine(Directory.GetCurrentDirectory(), "Products.csv");
                 await DownloadFile(productsFileUrl, productFilePath); //saving file on local storage
-
+                
                 using (var reader = new StreamReader(productFilePath))
-                using (var file = new CsvReader(reader, new CsvHelper.Configuration.CsvConfiguration(System.Globalization.CultureInfo.InvariantCulture)))
+                using (var file = new CsvReader(reader, new CsvHelper.Configuration.CsvConfiguration(System.Globalization.CultureInfo.InvariantCulture)
                 {
-                    var products = file.GetRecords<Product>().Where(x => !x.Is_Wire && x.Shipping <= DateTime.Now.AddDays(1)).ToList();
+                    Delimiter = ";",
+                    HasHeaderRecord = true,
+                    IgnoreBlankLines = true,
+                    MissingFieldFound = null
+            }))
+                {
+                    var products = file.GetRecords<Product>().Where(x => !x.Is_Wire && x.Shipping == "Wysyłka w 24h").Select(x => new Product
+                    {
+                        ID = x.ID,
+                        SKU = x.SKU,
+                        Name = x.Name,
+                        EAN = x.EAN,
+                        Producer_Name = x.Producer_Name,
+                        Category = x.Category,
+                        Is_Wire = x.Is_Wire,
+                        Available = x.Available,
+                        Is_Vendor = x.Is_Vendor,
+                        Default_Image = x.Default_Image,
+                    }).ToList();
 
                     await _context.Products.AddRangeAsync(products);
                     await _context.SaveChangesAsync();
@@ -101,9 +119,9 @@ namespace RestApiExample.Controllers
                 using (var reader = new StreamReader(inventoryFilePath))
                 using (var csv = new CsvReader(reader, new CsvHelper.Configuration.CsvConfiguration(System.Globalization.CultureInfo.InvariantCulture)))
                 {
-                    var inventoryItems = csv.GetRecords<Inventory>().Where(x => x.Shipping <= DateTime.Now.AddDays(1)).Select(x => new Inventory
+                    var inventoryItems = csv.GetRecords<Inventory>().Where(x => x.Shipping == "Wysyłka w 24h").Select(x => new Inventory
                     {
-                        Id = x.Id,
+                        Product_Id = x.Product_Id,
                         SKU = x.SKU,
                         Qty = x.Qty,
                         Unit = x.Unit,
@@ -133,7 +151,11 @@ namespace RestApiExample.Controllers
                 await DownloadFile(priceFileUrl, priceFilePath); //saving file on local storage
 
                 using (var reader = new StreamReader(priceFilePath))
-                using (var csv = new CsvReader(reader, new CsvHelper.Configuration.CsvConfiguration(System.Globalization.CultureInfo.InvariantCulture)))
+                using (var csv = new CsvReader(reader, new CsvHelper.Configuration.CsvConfiguration(System.Globalization.CultureInfo.InvariantCulture)
+                {
+                    Delimiter = ",",
+                    HasHeaderRecord = false
+                }))
                 {
                     var prices = csv.GetRecords<Price>().Select(x => new Price
                     {
@@ -156,7 +178,6 @@ namespace RestApiExample.Controllers
                 return StatusCode(500, $"Imported prices went wrong with error: {ex.Message}");
             }
         }
-
 
         private async Task DownloadFile(string url, string destinationPath)
         {

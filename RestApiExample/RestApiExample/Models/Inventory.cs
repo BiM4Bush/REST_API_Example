@@ -1,30 +1,40 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using CsvHelper.Configuration.Attributes;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace RestApiExample.Models
 {
     [Table("inventory")]
     public class Inventory
     {
-        [Column("id")]
-        public int Id { get; set; }
+        [Key]
+        [Column("product_id")]
+        [Name("product_id")]
+        public string Product_Id { get; set; }
 
         [Column("sku")]
+        [Name("sku")]
         public string SKU { get; set; }
 
         [Column("unit")]
+        [Name("unit")]
         public string Unit { get; set; }
 
         [Column("qty")]
-        public int Qty { get; set; }
+        [Name("qty")]
+        public string Qty { get; set; }
 
         [Column("manufacturer")]
-        public string Manufacturer { get; set; }
+        [Name("manufacturer_name")]
+        public string? Manufacturer { get; set; }
 
         [Column("shipping")]
-        public DateTime Shipping { get; set; }
+        [Name("shipping")]
+        public string? Shipping { get; set; }
 
         [Column("shipping_cost")]
-        public double Shipping_Cost { get; set; }
+        [Name("shipping_cost")]
+        public string? Shipping_Cost { get; set; }
 
     }
 }
