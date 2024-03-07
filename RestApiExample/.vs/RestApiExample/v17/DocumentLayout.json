@@ -1,0 +1,133 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Repozytoria\\REST_API_Example\\RestApiExample\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{772E29E5-6405-4565-9B35-BC26174E2192}|RestApiExample\\RestApiExample.csproj|d:\\repozytoria\\rest_api_example\\restapiexample\\restapiexample\\controllers\\productdatacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{772E29E5-6405-4565-9B35-BC26174E2192}|RestApiExample\\RestApiExample.csproj|solutionrelative:restapiexample\\controllers\\productdatacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{772E29E5-6405-4565-9B35-BC26174E2192}|RestApiExample\\RestApiExample.csproj|d:\\repozytoria\\rest_api_example\\restapiexample\\restapiexample\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{772E29E5-6405-4565-9B35-BC26174E2192}|RestApiExample\\RestApiExample.csproj|solutionrelative:restapiexample\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{772E29E5-6405-4565-9B35-BC26174E2192}|RestApiExample\\RestApiExample.csproj|d:\\repozytoria\\rest_api_example\\restapiexample\\restapiexample\\models\\inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{772E29E5-6405-4565-9B35-BC26174E2192}|RestApiExample\\RestApiExample.csproj|solutionrelative:restapiexample\\models\\inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{772E29E5-6405-4565-9B35-BC26174E2192}|RestApiExample\\RestApiExample.csproj|d:\\repozytoria\\rest_api_example\\restapiexample\\restapiexample\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{772E29E5-6405-4565-9B35-BC26174E2192}|RestApiExample\\RestApiExample.csproj|solutionrelative:restapiexample\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{772E29E5-6405-4565-9B35-BC26174E2192}|RestApiExample\\RestApiExample.csproj|d:\\repozytoria\\rest_api_example\\restapiexample\\restapiexample\\models\\price.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{772E29E5-6405-4565-9B35-BC26174E2192}|RestApiExample\\RestApiExample.csproj|solutionrelative:restapiexample\\models\\price.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{772E29E5-6405-4565-9B35-BC26174E2192}|RestApiExample\\RestApiExample.csproj|d:\\repozytoria\\rest_api_example\\restapiexample\\restapiexample\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{772E29E5-6405-4565-9B35-BC26174E2192}|RestApiExample\\RestApiExample.csproj|solutionrelative:restapiexample\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{772E29E5-6405-4565-9B35-BC26174E2192}|RestApiExample\\RestApiExample.csproj|d:\\repozytoria\\rest_api_example\\restapiexample\\restapiexample\\data\\restapiexdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{772E29E5-6405-4565-9B35-BC26174E2192}|RestApiExample\\RestApiExample.csproj|solutionrelative:restapiexample\\data\\restapiexdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\Repozytoria\\REST_API_Example\\RestApiExample\\RestApiExample\\appsettings.json",
+              "RelativeDocumentMoniker": "RestApiExample\\appsettings.json",
+              "ToolTip": "D:\\Repozytoria\\REST_API_Example\\RestApiExample\\RestApiExample\\appsettings.json",
+              "RelativeToolTip": "RestApiExample\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-03-06T23:47:00.839Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "RestApiExDbContext.cs",
+              "DocumentMoniker": "D:\\Repozytoria\\REST_API_Example\\RestApiExample\\RestApiExample\\Data\\RestApiExDbContext.cs",
+              "RelativeDocumentMoniker": "RestApiExample\\Data\\RestApiExDbContext.cs",
+              "ToolTip": "D:\\Repozytoria\\REST_API_Example\\RestApiExample\\RestApiExample\\Data\\RestApiExDbContext.cs",
+              "RelativeToolTip": "RestApiExample\\Data\\RestApiExDbContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAABCAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-06T23:26:34.583Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Repozytoria\\REST_API_Example\\RestApiExample\\RestApiExample\\Program.cs",
+              "RelativeDocumentMoniker": "RestApiExample\\Program.cs",
+              "ToolTip": "D:\\Repozytoria\\REST_API_Example\\RestApiExample\\RestApiExample\\Program.cs",
+              "RelativeToolTip": "RestApiExample\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-06T15:09:27.853Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Inventory.cs",
+              "DocumentMoniker": "D:\\Repozytoria\\REST_API_Example\\RestApiExample\\RestApiExample\\Models\\Inventory.cs",
+              "RelativeDocumentMoniker": "RestApiExample\\Models\\Inventory.cs",
+              "ToolTip": "D:\\Repozytoria\\REST_API_Example\\RestApiExample\\RestApiExample\\Models\\Inventory.cs",
+              "RelativeToolTip": "RestApiExample\\Models\\Inventory.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-06T14:53:19.49Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Price.cs",
+              "DocumentMoniker": "D:\\Repozytoria\\REST_API_Example\\RestApiExample\\RestApiExample\\Models\\Price.cs",
+              "RelativeDocumentMoniker": "RestApiExample\\Models\\Price.cs",
+              "ToolTip": "D:\\Repozytoria\\REST_API_Example\\RestApiExample\\RestApiExample\\Models\\Price.cs",
+              "RelativeToolTip": "RestApiExample\\Models\\Price.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-06T13:25:39.98Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Product.cs",
+              "DocumentMoniker": "D:\\Repozytoria\\REST_API_Example\\RestApiExample\\RestApiExample\\Models\\Product.cs",
+              "RelativeDocumentMoniker": "RestApiExample\\Models\\Product.cs",
+              "ToolTip": "D:\\Repozytoria\\REST_API_Example\\RestApiExample\\RestApiExample\\Models\\Product.cs",
+              "RelativeToolTip": "RestApiExample\\Models\\Product.cs",
+              "ViewState": "AQIAABIAAAAAAAAAAAAAACcAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-06T13:06:17.318Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ProductDataController.cs",
+              "DocumentMoniker": "D:\\Repozytoria\\REST_API_Example\\RestApiExample\\RestApiExample\\Controllers\\ProductDataController.cs",
+              "RelativeDocumentMoniker": "RestApiExample\\Controllers\\ProductDataController.cs",
+              "ToolTip": "D:\\Repozytoria\\REST_API_Example\\RestApiExample\\RestApiExample\\Controllers\\ProductDataController.cs",
+              "RelativeToolTip": "RestApiExample\\Controllers\\ProductDataController.cs",
+              "ViewState": "AQIAADoAAAAAAAAAAAAmwDsAAACBAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-06T12:54:42.602Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

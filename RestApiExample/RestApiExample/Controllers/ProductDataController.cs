@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using CsvHelper;
+using Microsoft.AspNetCore.Mvc;
 using RestApiExample.Data;
 using RestApiExample.Models;
 
@@ -8,20 +9,16 @@ namespace RestApiExample.Controllers
     [ApiController]
     public class ProductDataController : Controller // Name convention??
     {
-        private readonly ProductContext _productContext;
-        private readonly InventoryContext _inventoryContext;
-        private readonly PriceContext _priceContext;
+        private readonly RestApiExDbContext _context;
         private readonly ILogger<ProductDataController> _logger;
         private readonly HttpClient _httpClient;
 
 
-        public ProductDataController(ProductContext productContext, InventoryContext inventoryContext, PriceContext priceContext, ILogger<ProductDataController> logger, IHttpClientFactory httpClientFactory)
+        public ProductDataController(RestApiExDbContext context, ILogger<ProductDataController> logger, IHttpClientFactory httpClientFactory)
         {
-            _productContext = productContext;
-            _inventoryContext = inventoryContext;
-            _priceContext = priceContext;
+            _context = context;
             _logger = logger;
-            _httpClient = httpClientFactory.CreateHttpClient();
+            _httpClient = httpClientFactory.CreateClient();
         }
 
         [HttpGet("GetProductDetails")]
@@ -29,14 +26,14 @@ namespace RestApiExample.Controllers
         {
             try
             {
-                var product = _productContext.Products.FirstOrDefault(x => x.SKU == sku);
+                var product = _context.Products.FirstOrDefault(x => x.SKU == sku);
                 if(product == null)
                 {
                     return NotFound("Product with provided SKU does not exist");
                 }
 
-                var inventory = _inventoryContext.Inventories.FirstOrDefault(x => x.SKU == sku);
-                var price = _priceContext.Prices.FirstOrDefault(x => x.SKU == sku);
+                var inventory = _context.Inventories.FirstOrDefault(x => x.SKU == sku);
+                var price = _context.Prices.FirstOrDefault(x => x.SKU == sku);
 
                 var productDetails = new // used anonymous type to collect needed data in object 
                 {
@@ -63,7 +60,7 @@ namespace RestApiExample.Controllers
                 _logger.LogError($"Collecting product info went wrong with error: {ex.Message}"); // maybe modify error messages 
                 return StatusCode(500, $"Collecting product info went wrong with error: {ex.Message}");
             }
-        }
+        
         }
 
         [HttpPost("ImportProducts")]
@@ -78,10 +75,10 @@ namespace RestApiExample.Controllers
                 using (var reader = new StreamReader(productFilePath))
                 using (var file = new CsvReader(reader, new CsvHelper.Configuration.CsvConfiguration(System.Globalization.CultureInfo.InvariantCulture)))
                 {
-                    var products = csv.GetRecords<Product>().Where(x => !x.Is_Wire && x.Shipping <= DateTime.Now.AddDays(1)).ToList();
+                    var products = file.GetRecords<Product>().Where(x => !x.Is_Wire && x.Shipping <= DateTime.Now.AddDays(1)).ToList();
 
-                    await _productContext.Products.AddRangeAsync(products);
-                    await _productContext.SaveChangesAsync();
+                    await _context.Products.AddRangeAsync(products);
+                    await _context.SaveChangesAsync();
                 }
                 return Ok("Products imported successfully");
             }
@@ -114,8 +111,8 @@ namespace RestApiExample.Controllers
 
                     }).ToList(); // Data to confirm 
 
-                    await _inventoryContext.Inventories.AddRangeAsync(inventoryItems);
-                    await _inventoryContext.SaveChangesAsync();
+                    await _context.Inventories.AddRangeAsync(inventoryItems);
+                    await _context.SaveChangesAsync();
                 }
                 return Ok("Inventory imported successfully");
             }
@@ -148,8 +145,8 @@ namespace RestApiExample.Controllers
                         Logistic_Unit_Nett_Price = x.Logistic_Unit_Nett_Price,
                     }).ToList(); // Data to confirm
 
-                    await _priceContext.Prices.AddRangeAsync(prices);
-                    await _priceContext.SaveChangesAsync();
+                    await _context.Prices.AddRangeAsync(prices);
+                    await _context.SaveChangesAsync();
                 }
                 return Ok("Prices imported successfully");
             }

@@ -1,4 +1,6 @@
-﻿namespace RestApiExample.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace RestApiExample.Models
 {
     [Table("inventory")]
     public class Inventory

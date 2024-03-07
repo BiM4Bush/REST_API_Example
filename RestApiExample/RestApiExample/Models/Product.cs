@@ -26,6 +26,9 @@ namespace RestApiExample.Models
         [Column("is_wire")]
         public bool Is_Wire { get; set; }
 
+        [Column("shipping")]
+        public DateTime Shipping { get; set; }
+
         [Column("available")]
         public bool Available { get; set; }
 
